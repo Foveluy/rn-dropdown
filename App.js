@@ -1,11 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import Dropdown from "./index";
+import { Text, View, StyleSheet } from "react-native";
+
+const headers = [
+  { title: "first", key: "f", height: 300 },
+  { title: "second", key: "s", height: 200 },
+  { title: "third", key: "t", height: 250 }
+];
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Dropdown headers={headers}>
+          <View>
+            <Text>first</Text>
+          </View>
+          <View>
+            <Text>second</Text>
+          </View>
+          <View>
+            <Text>third</Text>
+          </View>
+        </Dropdown>
       </View>
     );
   }
@@ -14,8 +31,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fafafa",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });
