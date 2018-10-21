@@ -170,8 +170,12 @@ export default class Dropdown extends React.PureComponent {
 
     return (
       <React.Fragment>
-        {this.state.isVisiable ? null : <Header />}
-        <Modal transparent visible={this.state.isVisiable}>
+        <Header />
+        <Modal
+          transparent
+          onRequestClose={() => this.close()}
+          visible={this.state.isVisiable}
+        >
           <Header
             style={{
               marginTop: this.state.headerPosition.y
