@@ -173,7 +173,7 @@ export default class Dropdown extends React.PureComponent {
       <React.Fragment>
         <Header />
         <Modal
-          transparent={Platform.select({ ios: false, android: true })}
+          transparent={Platform.select({ ios: true, android: false })}
           onRequestClose={() => this.close()}
           visible={this.state.isVisiable}
         >
