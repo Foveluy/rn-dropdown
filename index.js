@@ -6,7 +6,8 @@ import {
   Modal,
   TouchableOpacity,
   Animated,
-  Dimensions
+  Dimensions,
+  Platform
 } from "react-native";
 
 const WINDOW_WIDTH = Dimensions.get("window").width;
@@ -172,7 +173,7 @@ export default class Dropdown extends React.PureComponent {
       <React.Fragment>
         <Header />
         <Modal
-          transparent
+          transparent={Platform.select({ ios: false, android: true })}
           onRequestClose={() => this.close()}
           visible={this.state.isVisiable}
         >
